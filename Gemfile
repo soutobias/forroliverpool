@@ -11,7 +11,12 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
-gem 'rack-cors'
+# Deals with the same-origin policy (SOP) settings and allows cross-origin requests (Cross-Origin Resource Sharing, CORS).
+gem 'rack-cors', :require => 'rack/cors'
+
+# Allows to start both the Rails server and the React server
+gem 'foreman'
+
 gem 'faker'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]

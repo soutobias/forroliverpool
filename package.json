@@ -15,5 +15,8 @@
     "install": "cd frontend && npm install"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react-fontawesome": "^1.7.1"
+  }
 }
