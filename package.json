@@ -17,6 +17,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "js-cookie": "^3.0.5",
+    "phosphor-react": "^1.4.1",
     "react-fontawesome": "^1.7.1"
   }
 }
