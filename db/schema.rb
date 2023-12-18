@@ -23,6 +23,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_07_203949) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "event_users", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.string "relation_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_users_on_event_id"
+    t.index ["user_id"], name: "index_event_users_on_user_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -76,5 +86,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_07_203949) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "event_users", "events"
+  add_foreign_key "event_users", "users"
   add_foreign_key "posts", "users"
 end

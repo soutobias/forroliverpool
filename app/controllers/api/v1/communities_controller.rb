@@ -21,7 +21,7 @@ class Api::V1::CommunitiesController < ApplicationController
     if @community.save
       render json: @community, status: :created, location: @community
     else
-      render json: @community.errors, status: :unprocessable_entity
+      render json: @community.errors.full_messages, status: :unprocessable_entity
     end
   end
 
